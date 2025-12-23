@@ -22488,5 +22488,18 @@
         "nom": "Lavadero EcoTrans",
         "poblacio": "Gallur",
         "telefon": null
+    },
+    {
+        "comarca": "Tarragona",
+        "comentari": "Parking",
+        "gps1": "https://maps.app.goo.gl/k1WPWR1RBRYP9T5w9",
+        "gps2": null,
+        "gps3": null,
+        "id": 1732,
+        "lat": 41.138657,
+        "lon": 1.1705305,
+        "nom": "Base Tarragona",
+        "poblacio": "La Canonja",
+        "telefon": null
     }
 ]
