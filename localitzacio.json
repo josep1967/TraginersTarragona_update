@@ -22475,5 +22475,18 @@
         "nom": "Jose Valles Faci",
         "poblacio": "Torrevelilla",
         "telefon": "649705346"
+    },
+    {
+        "comarca": "Zaragoza",
+        "comentari": "Lavadero de Jaulas",
+        "gps1": "https://maps.app.goo.gl/8msfiqF3Ejais5LT8",
+        "gps2": null,
+        "gps3": null,
+        "id": 1731,
+        "lat": 41.838392,
+        "lon": -1.3175957,
+        "nom": "Lavadero EcoTrans",
+        "poblacio": "Gallur",
+        "telefon": null
     }
 ]
