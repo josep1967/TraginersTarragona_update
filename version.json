@@ -1,7 +1,7 @@
 {
-  "version": "1.0.1",
-  "apk_url": "https://github.com/josep1967/TraginersTarragona_update/releases/download/v1.0.1/TgrTNG_v1.0.1.apk",
+  "version": "1.0.2",
+  "apk_url": "https://github.com/josep1967/TraginersTarragona_update/releases/download/v1.0.2/TgrTNG_v1.0.2.apk",
   "message1": "¡Nueva versión disponible! Incluye mejoras.",
-  "message2": "Sistema de Actualizaciones Automático.",
-  "message3": "Toca aquí para actualizar."
+  "message2": "Calculos de descansos.",
+  "message3": "Multiples ajustes."
 }
