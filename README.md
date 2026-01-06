@@ -1,75 +1,103 @@
-📘 Traginers de Tarragona (Android)
+# 🚚 App de Gestión de Actividades y Normativa para Conductores Profesionales
 
-📝 Descripció del projecte
-Aquesta aplicació Android permet gestionar períodes de treball, activitats diàries i descansos segons la normativa de transport professional. 
-Inclou càlcul automàtic de:
-- Descansos entre activitats
-- Descansos setmanals
-- Reduccions aplicades
-- Compensacions pendents
-- Disponibilitat futura
-- Tancament i obertura de períodes
+Una aplicación móvil pensada **para el conductor**, no para la oficina.  
+Combina normativa, GPS y una línea de tiempo visual para ayudar a cumplir el Reglamento 561/2006 de forma clara e intuitiva.
 
-L’objectiu és oferir una eina fiable, clara i normativa per al conductor.
+---
 
-Tambè pot programar Recordatoris amb Notificacions persistents.
+## 🧩 Módulos principales
 
-Gestió de Localitzacions desades.
+### 🟦 1. Recordatorios
+Sistema de avisos útiles para el conductor:
+- recordatorios persistentes,
+- alertas contextuales,
+- avisos normativos.
 
-Grabació de Recorreguts.
+### 🟦 2. Gestor de Localizaciones
+Motor de geolocalización con:
+- detección peatón/vehículo,
+- filtros de precisión y velocidad,
+- gestión de puntos GPS,
+- sincronización con actividades.
 
-🧱 Arquitectura general
-El projecte està desenvolupat en Java amb Android Studio, utilitzant:
-- SQLite com a base de dades local
-- DBHelper com a capa d’accés a dades
-- MainActivity com a pantalla principal
-- ActividadActivity per gestionar activitats i períodes
-- SharedPreferences per sincronitzar l’estat de la UI entre pantalles
-  
-🔄 Flux de funcionament
-1. Obertura d’un període
-- Es crea un nou registre a periodo
-- Es guarda la data d’inici
-- La UI mostra disponibilitat immediata
-2. Creació d’activitats
-Cada activitat té:
-- Hora d’inici i fi
-- Tipus d’activitat
-- Reducció aplicada (si escau)
-Quan es tanca una activitat:
-- Es calcula el descans amb l’anterior
-- Es classifica (normal, reduït, insuficient)
-- Es marca reduccionAplicada si toca
-- S’actualitza reducciones i compensacionPendiente del període
-3. Tancament d’un període
-Quan es tanca:
-- Es valida que no hi hagi activitat oberta
-- Es calcula duració total, km i reduccions
-- Es mostra un resum
-- Es calcula la nova disponibilitat: fi del període + 45 hores
-- Aquesta disponibilitat es desa a SharedPreferences
-4. MainActivity
-Quan l’usuari torna a la pantalla principal:
-- Llegeix l’estat guardat a SharedPreferences
-- Mostra disponibilitat, avisos i estat general
+### 🟦 3. Registro de Recorridos
+Sistema de rutas con:
+- polilíneas limpias,
+- bounding box automático,
+- marcadores de inicio y fin,
+- integración con la línea de tiempo.
 
-🧮 Lògica normativa implementada
-✔ Descansos
-- Càlcul automàtic entre activitats
-- Classificació segons normativa
-✔ Reduccions
-- Es marquen a l’activitat on s’apliquen
-- Es comptabilitzen al període
-- Es mostren com X / 3
-✔ Compensacions
-- S’acumulen al període
-- Es mostren al resum de tancament
-✔ Disponibilitat
-- Durant període → segons activitat
-- Després de tancar període → fi + 45h
+---
 
-💾 Persistència
-SQLite
+## 🎯 Funcionalidades destacadas
+
+- Registro de actividades (conducción, trabajo, descanso, disponibilidad).  
+- Línea de tiempo visual de toda la jornada.  
+- Detección automática de descansos largos.  
+- Clasificación normativa (diario, reducido, semanal, normal).  
+- Reinicio automático del período de 144 horas.  
+- Cálculo y gestión de compensaciones pendientes.  
+- Avisos persistentes y puntuales para evitar sanciones.  
+
+---
+
+## 🧠 ¿Por qué es diferente?
+
+Los softwares del sector (TachoScan, Optac, Continental…) están pensados para inspectores y gestores.  
+Esta app está pensada **para el conductor**:
+
+- asistencia en tiempo real,  
+- normativa explicada de forma humana,  
+- prevención de infracciones,  
+- integración GPS + actividades + normativa,  
+- todo en un solo dispositivo.
+
+---
+
+## 🗺 Diagrama conceptual del proyecto
+
+```text
+                ┌──────────────────────────┐
+                │        Pantalla          │
+                │        Principal         │
+                │  - Estado actual         │
+                │  - Avisos persistentes   │
+                │  - Timeline + Mapa       │
+                └────────────┬─────────────┘
+                             │
+                             ▼
+        ┌──────────────────────────────────────────┐
+        │              Motor Normativo             │
+        │  - Clasificación de descansos            │
+        │  - Períodos de 144h                      │
+        │  - Compensaciones pendientes             │
+        │  - Aplicación automática                 │
+        └──────────────────┬───────────────────────┘
+                           │
+                           ▼
+        ┌──────────────────────────────────────────┐
+        │            Gestor de Actividades         │
+        │  - Conducción / Trabajo / Descanso       │
+        │  - Inicio y fin de actividad             │
+        │  - Sincronización con timeline           │
+        └──────────────────┬───────────────────────┘
+                           │
+                           ▼
+        ┌──────────────────────────────────────────┐
+        │         Gestor de Localizaciones         │
+        │  - GPS filtrado                          │
+        │  - Modo peatón/vehículo                  │
+        │  - Registro de puntos                    │
+        └──────────────────┬───────────────────────┘
+                           │
+                           ▼
+        ┌──────────────────────────────────────────┐
+        │       Registro de Recorridos             │
+        │  - Polilíneas limpias                    │
+        │  - Marcadores de inicio y fin            │
+        │  - Bounding box automático               │
+        └──────────────────────────────────────────┘
+
 
 👤 Autor
 Projecte desenvolupat per P&C enginyeria, Android developer i creative technologist.
