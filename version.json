@@ -1,7 +1,7 @@
 {
-  "version": "1.0.5",
+  "version": "1.1.0",
   "apk_url": "https://github.com/josep1967/TraginersTarragona_update/releases/download/v1.0.5/TgrTNG_v1.0.5.apk",
-  "message1": "Modulo de Conducción.",
-  "message2": "Solo interfaz gráfica.",
-  "message3": "Multiples ajustes."
+  "message1": "Multiples ajustes.",
+  "message2": "Tacografo",
+  "message3": "Historiales."
 }
